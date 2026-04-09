@@ -1,0 +1,320 @@
+/* ------------------------- Scaling System by Osmo [https://osmo.supply/] ------------------------- */
+/* Desktop */
+:root {
+  --size-unit: 16; /* body font-size in design - no px */
+  --size-container-ideal: 1440; /* screen-size in design - no px */
+  --size-container-min: 992px;
+  --size-container-max: 1920px;
+  --size-container: clamp(var(--size-container-min), 100vw, var(--size-container-max));
+  --size-font: calc(var(--size-container) / (var(--size-container-ideal) / var(--size-unit)));
+}
+
+/* Tablet */
+@media screen and (max-width: 991px) {
+  :root {
+    --size-container-ideal: 834; /* screen-size in design - no px */
+    --size-container-min: 768px;
+    --size-container-max: 991px;
+  }
+}
+
+/* Mobile Landscape */
+@media screen and (max-width: 767px) {
+  :root {
+    --size-container-ideal: 550; /* screen-size in design - no px */
+    --size-container-min: 480px;
+    --size-container-max: 767px;
+  }
+}
+
+/* Mobile Portrait */
+@media screen and (max-width: 479px) {
+  :root {
+    --size-container-ideal: 390; /* screen-size in design - no px */
+    --size-container-min: 320px;
+    --size-container-max: 479px;
+  }
+}
+
+body {
+  font-size: var(--size-font);
+}
+
+/* Keep viewport unit stable for pinned sticky-features section. */
+.sticky-features__scroll {
+  height: 100svh;
+}
+
+/* Layered pinned sections */
+.layered-panels {
+  position: relative;
+}
+
+.layered-panel {
+  width: 100%;
+  height: 100%;
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  gap: 1em;
+  padding: 2em 1.25em;
+  text-align: center;
+  position: relative;
+  z-index: 1;
+  box-sizing: border-box;
+}
+
+.layered-panel .h1 {
+  color: var(--gallery-white);
+  margin: 0;
+}
+
+.layered-panel.is-black {
+  background-color: var(--gallery-black);
+}
+
+.layered-panel.is-red {
+  background-color: var(--gallery-red);
+}
+
+.layered-panel.is-sand {
+  background-color: var(--gallery-sand);
+}
+
+
+
+.container {
+  max-width: var(--size-container);
+}
+
+.container.medium {
+  max-width: calc(var(--size-container) * 0.85);
+}
+
+.container.small {
+  max-width: calc(var(--size-container) * 0.7);
+}
+
+.w-webflow-badge {
+  opacity: 0% !important;
+}
+
+/* Webflow Designer resets to show hidden content: */
+.wf-design-mode .sticky-features__text-list {
+  overflow: auto;
+  max-height: 45em;
+  gap: 2em;
+  justify-content: flex-start;
+}
+
+.wf-design-mode .sticky-features__text-item {
+  position: relative;
+}
+
+.wf-design-mode [data-sticky-feature-item] {
+  visibility: visible;
+}
+
+/* Show only 1st items on live site */
+[data-sticky-feature-visual-wrap]:first-of-type {
+  clip-path: inset(0% round 0.75em);
+}
+
+[data-sticky-feature-item]:first-of-type {
+  visibility: visible;
+}
+
+/* Brand Cards */
+/* This is optional! Only add if you're NOT going to use a CMS list.
+The below snippet will stack your items in the Webflow designer and editor only, so you can edit content easier. */
+.wf-design-mode .motionpath-content-list,
+.w-editor .motionpath-content-list {
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+  overflow: scroll;
+}
+
+.wf-design-mode .motionpath-content-item,
+.w-editor .motionpath-content-item {
+  position: relative;
+}
+
+/* Horizontal scroll */
+/* Add auto overflow in webflow to make editing easier */
+.wf-design-mode [data-horizontal-scroll-wrap],
+.wf-design-mode [data-horizontal-gallery-wrap] {
+  overflow: auto;
+}
+
+/* Social logos */
+[data-logo-wall-list] [data-logo-wall-item]:nth-child(n+9) {
+  display: none;
+}
+
+@media screen and (max-width: 991px) {
+  [data-logo-wall-list] [data-logo-wall-item]:nth-child(n+7) {
+    display: none;
+  }
+}
+
+/* Sticky Steps */
+.sticky-steps {
+  min-height: 100dvh;
+  position: relative;
+  overflow: clip;
+}
+
+.sticky-steps__container {
+  max-width: 74em;
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: 1.5em;
+  padding-right: 1.5em;
+}
+
+.sticky-steps__collection {
+  min-height: 100dvh;
+  display: flex;
+  position: relative;
+}
+
+.sticky-steps__list {
+  grid-column-gap: 30dvh;
+  grid-row-gap: 30dvh;
+  flex-flow: column;
+  flex: 1;
+  padding-top: calc(50dvh - 7.5em);
+  padding-bottom: calc(50dvh - 7.5em);
+  display: flex;
+}
+
+.sticky-steps__text {
+  grid-column-gap: 2em;
+  grid-row-gap: 2em;
+  flex-flow: column;
+  width: 50%;
+  padding-right: 6em;
+  display: flex;
+  color: var(--gallery-white);
+}
+
+.sticky-steps__eyebrow {
+  opacity: 0.5;
+  text-transform: uppercase;
+  font-size: 1.3125em;
+  font-weight: 700;
+}
+
+.sticky-steps__h2 {
+  letter-spacing: -0.04em;
+  margin-top: 0;
+  margin-bottom: 0;
+  font-size: min(5.5em, 15vw);
+  font-weight: 500;
+  line-height: 0.9;
+}
+
+.sticky-steps__p {
+  opacity: 0.6;
+  margin-bottom: 0;
+  font-size: min(1.4375em, 5vw);
+  line-height: 1.4;
+}
+
+.sticky-steps__media {
+  width: 50%;
+  height: 100%;
+  padding-left: 3em;
+  position: absolute;
+  top: 0;
+  right: 0;
+}
+
+.sticky-steps__sticky {
+  align-items: center;
+  width: 100%;
+  min-height: 100dvh;
+  display: flex;
+  position: sticky;
+  top: 0;
+}
+
+.sticky-steps__visual {
+  aspect-ratio: 3 / 4;
+  border-radius: 500em;
+  width: 100%;
+  position: relative;
+}
+
+.sticky-steps__cover-image {
+  object-fit: cover;
+  border-radius: inherit;
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+@media screen and (min-width: 992px) {
+  [data-sticky-steps-item-status] .sticky-steps__visual {
+    transition: opacity 0.5s ease-in-out, visibility 0.5s ease-in-out;
+    opacity: 0;
+    visibility: hidden;
+  }
+
+  [data-sticky-steps-item-status="before"] .sticky-steps__visual,
+  [data-sticky-steps-item-status="active"] .sticky-steps__visual {
+    opacity: 1;
+    visibility: visible;
+  }
+
+  [data-sticky-steps-item-status] .sticky-steps__text {
+    transition: opacity 0.5s ease-in-out;
+    opacity: 0.25;
+  }
+
+  [data-sticky-steps-item-status="active"] .sticky-steps__text {
+    opacity: 1;
+  }
+}
+
+@media screen and (max-width: 991px) {
+  .sticky-steps__list {
+    grid-column-gap: 7.5em;
+    grid-row-gap: 7.5em;
+    padding-top: 10em;
+    padding-bottom: 10em;
+  }
+
+  .sticky-steps__text {
+    width: 100%;
+    padding-bottom: 5em;
+    padding-right: 0;
+  }
+
+  .sticky-steps__sticky {
+    min-height: auto;
+    position: relative;
+    top: auto;
+  }
+
+  .sticky-steps__media {
+    width: 100%;
+    height: auto;
+    padding-left: 0;
+    position: relative;
+    top: auto;
+    right: auto;
+  }
+}
+
+@media screen and (max-width: 767px) {
+  .sticky-steps__text {
+    grid-column-gap: 1.5em;
+    grid-row-gap: 1.5em;
+  }
+}
