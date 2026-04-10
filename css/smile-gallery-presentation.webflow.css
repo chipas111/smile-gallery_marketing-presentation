@@ -162,6 +162,13 @@
   line-height: .9;
 }
 
+.h-h2 {
+  font-family: radiogrotesk-variable, Arial, sans-serif;
+  font-size: 2.8em;
+  font-weight: 400;
+  line-height: .9;
+}
+
 .para {
   font-family: radiogrotesk-variable, Arial, sans-serif;
   font-size: 1.5em;
@@ -1347,6 +1354,11 @@ width: 100%;
   max-width: 17em;
 }
 
+.social-section_item p {
+  color: var(--gallery-white);
+  text-align: center;
+}
+
 .social-section_user {
   border-radius: 100%;
   width: 6em;
@@ -1684,7 +1696,7 @@ width: 100%;
 .books-wrap {
   grid-column-gap: 7em;
   grid-row-gap: 7em;
-  background-color: var(--gallery-red);
+  /* background-color: var(--gallery-red); */
   flex-flow: column;
   justify-content: center;
   align-items: flex-start;
@@ -1693,6 +1705,22 @@ width: 100%;
   padding-bottom: 10em;
   display: flex;
   position: static;
+}
+
+.books-wrap.is-wide {
+  width: 32em;
+}
+
+.books-column {
+  width: 100%; 
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  gap: 2em;
+
+  img {
+    width: 60%;
+  }
 }
 
 .block-title_books {
@@ -1707,12 +1735,27 @@ width: 100%;
   display: flex;
 }
 
+.block-title_books li {
+  font-size: 1.2em;
+  font-weight: 400;
+  line-height: 1.2;
+  margin-bottom: 0.5em;
+}
+
 .books-columns {
   grid-column-gap: 2em;
   grid-row-gap: 2em;
   justify-content: center;
   align-items: center;
   display: flex;
+}
+
+/* .books-columns video {
+  width: 20em;
+} */
+
+.books-columns video {
+  width: 40em;
 }
 
 .h-books {
@@ -1727,6 +1770,10 @@ width: 100%;
   margin-left: auto;
   margin-right: auto;
   overflow: visible;
+}
+
+.section-books.is-black {
+  background-color: black;
 }
 
 .section-books-title {
@@ -1757,6 +1804,10 @@ width: 100%;
 .book-img {
   border-radius: 2em;
   max-width: 50%;
+}
+
+.book-img.is-wide {
+  max-width: 100%;
 }
 
 .vertical-image {

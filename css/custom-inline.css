@@ -487,6 +487,12 @@ The below snippet will stack your items in the Webflow designer and editor only,
   padding-left: 6em;
 }
 
+.ai-signals-table__titles {
+  display: flex;
+  justify-content: center;
+  gap: 3em;
+}
+
 .sg-sticky-tabs__lead {
   max-width: 42em;
   margin-top: 0;
