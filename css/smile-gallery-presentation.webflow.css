@@ -1777,6 +1777,12 @@ width: 100%;
   max-width: 100%;
 }
 
+.phones-in-steps {
+  border-radius: 2em;
+  width: 40%;
+  max-width: 100%;
+}
+
 .stacking-cards__item {
   color: #fff;
   border-top-left-radius: 1em;
