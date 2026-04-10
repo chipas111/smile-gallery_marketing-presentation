@@ -567,8 +567,153 @@ The below snippet will stack your items in the Webflow designer and editor only,
   margin-bottom: 2em;
 }
 
+.sg-video-enlarged {
+  width: 22em;
+  height: 22em;
+  max-width: none;
+  flex: 0 0 auto;
+}
+
+.sg-video-enlarged.is--contain {
+  object-fit: contain;
+}
+
+.section-books.is-black .books-columns .prompt-video {
+  width: auto;
+  height: 80svh;
+  max-height: 80svh;
+  max-width: none;
+  flex: 0 0 auto;
+}
+
+.prompt-list {
+  margin-top: 1em;
+  margin-bottom: 0;
+  padding-left: 1.1em;
+}
+
+.prompt-list li + li {
+  margin-top: 0.35em;
+}
+
+.sg-social-wrap--cheremisina {
+  padding-top: 6em;
+  padding-bottom: 6em;
+}
+
+.cheremisina-photo {
+  width: auto;
+  max-width: 32em;
+  max-height: 80svh;
+  object-fit: cover;
+}
+
 .sg-step-message-card--translator {
   max-width: 56em;
+}
+
+/* AI tools section */
+.ai-tools-section {
+  background-color: #000000;
+}
+
+.prompt-black-section,
+.cheremisina-video-section,
+.cheremisina-social-section,
+.ii-dima-video-section {
+  background-color: #000000;
+}
+
+.ai-tools-frame {
+  width: 90em;
+  max-width: 100%;
+  min-height: 50em;
+  margin-left: auto;
+  margin-right: auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  overflow: hidden;
+}
+
+.ai-tools-title {
+  width: 54.375em;
+  max-width: calc(100% - 1em);
+  margin: 0;
+  color: var(--gallery-white);
+  text-align: center;
+}
+
+.ai-tools-logos {
+  width: 40em;
+  height: 23em;
+  margin-top: 1.5em;
+  position: relative;
+}
+
+.ai-tool-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  position: absolute;
+}
+
+.ai-tool-item img {
+  object-fit: cover;
+  display: block;
+}
+
+.ibro {
+  margin-top: 0.75em;
+  color: #fffc;
+  text-transform: uppercase;
+  font-family: commons-pro-variable, Arial, sans-serif;
+  font-size: 0.65625em;
+  font-weight: 500;
+  line-height: 1.1;
+  letter-spacing: 0.03em;
+  text-align: center;
+  white-space: nowrap;
+}
+
+.ai-tool-item--deepseek {
+  top: 8.0625em;
+  left: 0;
+}
+
+.ai-tool-item--deepseek img {
+  width: 7.0625em;
+  height: 7.0625em;
+}
+
+.ai-tool-item--qwen {
+  top: 8.0625em;
+  left: 33em;
+}
+
+.ai-tool-item--qwen img {
+  width: 7em;
+  height: 7.0625em;
+}
+
+.ai-tool-item--alisa {
+  top: 0;
+  left: 13.5em;
+}
+
+.ai-tool-item--alisa img {
+  width: 12.5em;
+  height: 12.5em;
+}
+
+.ai-tool-item--perplexity {
+  top: 15.9375em;
+  left: 16.0625em;
+}
+
+.ai-tool-item--perplexity img {
+  width: 7.0625em;
+  height: 7.0625em;
 }
 
 .ai-signals-table__grid--translator {
@@ -592,6 +737,43 @@ The below snippet will stack your items in the Webflow designer and editor only,
 } */
 
 @media screen and (max-width: 991px) {
+  .section-books.is-black .books-columns .prompt-video {
+    height: 62svh;
+    max-height: 62svh;
+  }
+
+  .ai-tools-frame {
+    width: 100%;
+    height: auto;
+    min-height: 42em;
+    padding: 3em 1.25em 3em;
+  }
+
+  .ai-tools-title {
+    width: 100%;
+    max-width: 17ch;
+  }
+
+  .ai-tools-logos {
+    width: 100%;
+    height: auto;
+    margin-top: 2em;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1.5em;
+  }
+
+  .ai-tool-item {
+    position: relative;
+    top: auto;
+    left: auto;
+  }
+
+  .ibro {
+    font-size: .75em;
+  }
+
   .sg-sticky-tabs__title {
     font-size: calc(var(--size-font) * 1.7);
   }
